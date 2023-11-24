@@ -16,4 +16,4 @@ npx nodemon index.js
 
 
 === SQL ====
-in dir: db file
+in dir: config .sql file
