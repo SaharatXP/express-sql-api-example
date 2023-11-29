@@ -13,7 +13,7 @@ const authenticateToken = (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
-    // console.log(error);s
+    console.log(error);
     return res.sendStatus(403);
   }
 };
@@ -29,7 +29,7 @@ const middlewarePermissionAdmin = (req, res, next) => {
     const user = jwt.verify(token, secret);
     req.user = user;
 
-    if (user.role === "user") {
+    if (user.role === "admin") {
       // User has admin role, proceed to the next middleware
       next();
     } else {
@@ -38,6 +38,8 @@ const middlewarePermissionAdmin = (req, res, next) => {
     }
   } catch (error) {
     // Token verification failed, send forbidden response
+    console.log(error);
+
     return res.sendStatus(403);
   }
 };
