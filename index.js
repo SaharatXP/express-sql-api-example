@@ -12,8 +12,8 @@ app.use(cors());
 app.use("/api", authRouter);
 app.use("/api", productRouter);
 
-const port = 8000;
+const port = 3000;
 
 app.listen(port, async () => {
-  console.log("Server started at port 8000");
+  console.log("Server started at port 3000");
 });
