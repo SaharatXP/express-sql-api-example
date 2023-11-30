@@ -1,8 +1,8 @@
-FROM node:14
+FROM node:16
 
 # Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
 # Install 'cors' module
 RUN npm install cors
